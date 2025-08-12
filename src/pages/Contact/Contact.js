@@ -16,8 +16,8 @@ const Contact = () => {
     {
       icon: 'fas fa-envelope',
       title: 'Email',
-      value: 'muhammadmudassir981@gmail.com',
-      link: 'muhammadmudassir981@gmail.com'
+      value: 'muhammadmudassir980',
+      link: 'muhammadmudassir980@gmail.com'
     },
     {
       icon: 'fas fa-phone',
@@ -34,7 +34,7 @@ const Contact = () => {
     {
       icon: 'fab fa-linkedin',
       title: 'LinkedIn',
-      value: 'www.linkedin.com/in/muhammad-mudassir-/',
+      value: 'in/muhammad-mudassir-/',
       link: 'https://www.linkedin.com/in/muhammad-mudassir-/'
     }
   ];

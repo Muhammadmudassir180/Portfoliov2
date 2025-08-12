@@ -262,7 +262,7 @@ const Resume = () => {
             </div>
 
             {/* Certifications */}
-            <div className="resume-section">
+            {/* <div className="resume-section">
               <h3 className="section-heading">Certifications</h3>
               <div className="certifications-card card">
                 <div className="card-body">
@@ -275,7 +275,7 @@ const Resume = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

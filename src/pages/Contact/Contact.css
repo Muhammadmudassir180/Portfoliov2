@@ -24,12 +24,16 @@
 
 .contact-items {
   margin-bottom: 2rem;
+
+  
+  
 }
 
 .contact-item {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
+  
   margin-bottom: 1.5rem;
   padding: 1rem;
   background: var(--background-dark);
@@ -65,7 +69,7 @@
 .contact-details a,
 .contact-details span {
   color: var(--text-secondary);
-  text-decoration: none;
+  text-decoration:solid;
   transition: color 0.3s ease;
 }
 

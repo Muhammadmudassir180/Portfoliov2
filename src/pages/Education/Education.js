@@ -10,14 +10,14 @@ const Education = () => {
       institution: 'National University of Science and Technology',
       location: 'Islamabad, Pakistan',
       period: '2024 - present',
-      // gpa: '3.9/4.0',
+      gpa: '3.5/4.0',
       description: 'Specialized in Artificial Intelligence and Machine Learning with focus on deep learning applications and Large Language Models.',
-      // achievements: [
-      //   'Graduated with Distinction',
-      //   'Research Assistant in AI Lab',
-      //   'Published 2 research papers',
-      //   'Teaching Assistant for CS101'
-      // ],
+      achievements: [
+        'Graduated with Distinction',
+        'Research Assistant in AI Lab',
+        'Published 2 research papers',
+        'Teaching Assistant for CS101'
+      ],
       courses: ['Advanced Algorithms', 'Machine Learning', 'Deep Learning', 'GenAI', 'Natural Language Processing'],
       logo: '🎓'
     },
@@ -29,15 +29,15 @@ const Education = () => {
       period: '2019 - 2023',
       gpa: '3.0/4.0',
       description: 'Comprehensive study of Electrical Engineering fundamentals with emphasis on Signal System, Control Systems and software engineering.',
-      // achievements: [
-      //   'Dean\'s List (All Semesters)',
-      //   'Computer Science Honor Society',
-      //   'Capstone Project: E-commerce Platform',
-      //   'Internship at Google'
-      // ],
+      achievements: [
+        'Dean\'s List (All Semesters)',
+        'Computer Science Honor Society',
+        'Capstone Project: E-commerce Platform',
+        'Internship at Google'
+      ],
       courses: ['Signal and Systems', 'Digital Signal Processing', 'Control System', 'System Architecture', 'System Design'],
       logo: '🏛️'
-    },
+    }
     // {
     //   id: 3,
     //   degree: 'High School Diploma',
@@ -58,38 +58,38 @@ const Education = () => {
   ];
 
   const certifications = [
-    // {
-    //   id: 1,
-    //   name: 'AWS Certified Solutions Architect',
-    //   issuer: 'Amazon Web Services',
-    //   date: '2023',
-    //   credential: 'AWS-CSA-001',
-    //   logo: '☁️'
-    // },
-    // {
-    //   id: 2,
-    //   name: 'Google Cloud Professional Developer',
-    //   issuer: 'Google Cloud',
-    //   date: '2022',
-    //   credential: 'GCP-PD-002',
-    //   logo: '🌐'
-    // },
-    // {
-    //   id: 3,
-    //   name: 'Certified Scrum Master',
-    //   issuer: 'Scrum Alliance',
-    //   date: '2021',
-    //   credential: 'CSM-003',
-    //   logo: '📋'
-    // },
-    // {
-    //   id: 4,
-    //   name: 'Microsoft Certified: Azure Developer',
-    //   issuer: 'Microsoft',
-    //   date: '2022',
-    //   credential: 'MS-AZ-004',
-    //   logo: '💻'
-    // }
+    {
+      id: 1,
+      name: 'AWS Certified Solutions Architect',
+      issuer: 'Amazon Web Services',
+      date: '2023',
+      credential: 'AWS-CSA-001',
+      logo: '☁️'
+    },
+    {
+      id: 2,
+      name: 'Google Cloud Professional Developer',
+      issuer: 'Google Cloud',
+      date: '2022',
+      credential: 'GCP-PD-002',
+      logo: '🌐'
+    },
+    {
+      id: 3,
+      name: 'Certified Scrum Master',
+      issuer: 'Scrum Alliance',
+      date: '2021',
+      credential: 'CSM-003',
+      logo: '📋'
+    },
+    {
+      id: 4,
+      name: 'Microsoft Certified: Azure Developer',
+      issuer: 'Microsoft',
+      date: '2022',
+      credential: 'MS-AZ-004',
+      logo: '💻'
+    }
   ];
 
   return (
@@ -138,14 +138,14 @@ const Education = () => {
                   <div className="education-content">
                     <p className="education-description">{edu.description}</p>
                     
-                    <div className="education-achievements">
+                    {/* <div className="education-achievements">
                       <h5>Key Achievements:</h5>
                       <ul>
                         {edu.achievements.map((achievement, index) => (
                           <li key={index}>{achievement}</li>
                         ))}
                       </ul>
-                    </div>
+                    </div> */}
 
                     <div className="education-courses">
                       <h5>Relevant Courses:</h5>
@@ -165,9 +165,10 @@ const Education = () => {
         </div>
 
         {/* Certifications Section */}
+{/*         
         <div className="row mb-5">
           <div className="col-12">
-            {/* <h2 className="section-subtitle">Professional Certifications</h2> */}
+            <h2 className="section-subtitle">Professional Certifications</h2>
           </div>
           {certifications.map((cert) => (
             <div key={cert.id} className="col-lg-6 col-md-6 mb-4">
@@ -194,10 +195,10 @@ const Education = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Summary Section */}
-        <div className="row">
+        {/* <div className="row">
           <div className="col-12">
             <div className="card">
               <div className="card-header">
@@ -233,7 +234,10 @@ const Education = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
+
+
+
       </div>
     </div>
   );
