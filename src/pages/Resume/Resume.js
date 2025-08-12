@@ -3,81 +3,81 @@ import './Resume.css';
 
 const Resume = () => {
   const personalInfo = {
-    name: 'Your Name',
-    title: 'Full Stack Developer',
-    email: 'your.email@example.com',
-    phone: '+1 (234) 567-8900',
-    location: 'San Francisco, CA',
-    website: 'www.yourwebsite.com',
-    linkedin: 'linkedin.com/in/yourprofile',
-    github: 'github.com/yourusername'
+    name: 'Muhammad Mudassir',
+    title: 'Software and Machine Learning Engineer',
+    email: 'muhammadmudassir981@gmail.com',
+    phone: '+92-3083976682',
+    location: 'Islamabad, Pakistan',
+    website: 'mudassir.nucleartech.online',
+    linkedin: 'linkedin.com/in/yourprofilhttps://www.linkedin.com/in/muhammad-mudassir-/e',
+    github: 'https://github.com/Muhammadmudassir180'
   };
 
   const skills = {
-    'Programming Languages': ['JavaScript', 'Python', 'Java', 'C++', 'SQL'],
-    'Frontend Technologies': ['React', 'Vue.js', 'HTML5', 'CSS3', 'SASS', 'Bootstrap'],
-    'Backend Technologies': ['Node.js', 'Express.js', 'Django', 'Flask', 'Spring Boot'],
-    'Databases': ['MongoDB', 'PostgreSQL', 'MySQL', 'Redis', 'Firebase'],
-    'Cloud & DevOps': ['AWS', 'Docker', 'Kubernetes', 'CI/CD', 'Git'],
-    'Tools & Others': ['VS Code', 'Postman', 'Figma', 'Jira', 'Agile']
+    'Programming Languages': ['JavaScript', 'Python', 'C++'],
+    'Frontend Technologies': ['React', 'HTML5', 'CSS3'],
+    'Backend Technologies': ['Node.js', 'Express.js', 'FastAPI',],
+    'Databases': ['MongoDB', 'MySQL', 'Redis'],
+    'Cloud & DevOps': ['AWS', 'Docker', 'CI/CD', 'Git'],
+    // 'Tools & Others': [ 'Postman', 'Figma', 'Jira', 'Agile']
   };
 
-  const experience = [
-    {
-      title: 'Senior Full Stack Developer',
-      company: 'Tech Solutions Inc.',
-      period: 'January 2023 - Present',
-      location: 'San Francisco, CA',
-      achievements: [
-        'Led development of enterprise web applications using React and Node.js',
-        'Mentored 5 junior developers and conducted code reviews',
-        'Improved application performance by 40% through optimization',
-        'Implemented CI/CD pipeline reducing deployment time by 60%',
-        'Collaborated with cross-functional teams to deliver high-quality products'
-      ]
-    },
-    {
-      title: 'Full Stack Developer',
-      company: 'StartupXYZ',
-      period: 'March 2021 - December 2022',
-      location: 'New York, NY',
-      achievements: [
-        'Developed and maintained multiple web applications for a fast-growing startup',
-        'Built real-time chat application serving 10,000+ users',
-        'Developed RESTful APIs handling 1M+ requests daily',
-        'Implemented automated testing increasing code coverage to 85%',
-        'Worked closely with UX team to improve user experience'
-      ]
-    },
-    {
-      title: 'Frontend Developer',
-      company: 'Digital Agency ABC',
-      period: 'June 2020 - February 2021',
-      location: 'Los Angeles, CA',
-      achievements: [
-        'Developed 15+ responsive websites for different clients',
-        'Optimized website loading speed by 50%',
-        'Implemented modern CSS frameworks and animations',
-        'Worked closely with designers to ensure pixel-perfect implementations',
-        'Maintained and updated existing client websites'
-      ]
-    }
-  ];
+  // const experience = [
+  //   {
+  //     title: 'Senior Full Stack Developer',
+  //     company: 'Tech Solutions Inc.',
+  //     period: 'January 2023 - Present',
+  //     location: 'San Francisco, CA',
+  //     achievements: [
+  //       'Led development of enterprise web applications using React and Node.js',
+  //       'Mentored 5 junior developers and conducted code reviews',
+  //       'Improved application performance by 40% through optimization',
+  //       'Implemented CI/CD pipeline reducing deployment time by 60%',
+  //       'Collaborated with cross-functional teams to deliver high-quality products'
+  //     ]
+  //   },
+  //   {
+  //     title: 'Full Stack Developer',
+  //     company: 'StartupXYZ',
+  //     period: 'March 2021 - December 2022',
+  //     location: 'New York, NY',
+  //     achievements: [
+  //       'Developed and maintained multiple web applications for a fast-growing startup',
+  //       'Built real-time chat application serving 10,000+ users',
+  //       'Developed RESTful APIs handling 1M+ requests daily',
+  //       'Implemented automated testing increasing code coverage to 85%',
+  //       'Worked closely with UX team to improve user experience'
+  //     ]
+  //   },
+  //   {
+  //     title: 'Frontend Developer',
+  //     company: 'Digital Agency ABC',
+  //     period: 'June 2020 - February 2021',
+  //     location: 'Los Angeles, CA',
+  //     achievements: [
+  //       'Developed 15+ responsive websites for different clients',
+  //       'Optimized website loading speed by 50%',
+  //       'Implemented modern CSS frameworks and animations',
+  //       'Worked closely with designers to ensure pixel-perfect implementations',
+  //       'Maintained and updated existing client websites'
+  //     ]
+  //   }
+  // ];
 
   const education = [
     {
       degree: 'Master of Science in Computer Science',
-      institution: 'Stanford University',
-      period: '2021 - 2023',
-      gpa: '3.9/4.0',
-      highlights: ['Graduated with Distinction', 'Research Assistant in AI Lab', 'Published 2 research papers']
+      institution: 'National University of Science and Technology',
+      period: '2024 - present',
+      gpa: '3.5/4.0',
+      highlights: ['Advanced Algorithms', 'Machine Learning', 'Deep Learning', 'GenAI', 'Natural Language Processing']
     },
     {
-      degree: 'Bachelor of Science in Computer Science',
+      degree: 'Bachelor of Science in Electrical Engineering',
       institution: 'University of California, Berkeley',
-      period: '2017 - 2021',
-      gpa: '3.8/4.0',
-      highlights: ['Dean\'s List (All Semesters)', 'Computer Science Honor Society', 'Capstone Project: E-commerce Platform']
+      period: '2019 - 2023',
+      gpa: '3/4.0',
+      highlights: ['Signal and Systems', 'Digital Signal Processing', 'Control System', 'System Architecture', 'System Design']
     }
   ];
 
@@ -107,10 +107,10 @@ const Resume = () => {
     { name: 'Google Cloud Professional Developer', issuer: 'Google Cloud', year: '2022' },
     { name: 'Certified Scrum Master', issuer: 'Scrum Alliance', year: '2021' }
   ];
-
+  const resume_link="https://drive.google.com/file/d/1jhlXJzGVFMxPbAOXEIGWgW0UY_QWIhTE/view?usp=sharing";
   const handleDownload = () => {
     // This would typically generate and download a PDF
-    alert('Resume download functionality would be implemented here. You can add a PDF generation library like jsPDF or use a backend service.');
+   window.open(resume_link, "_blank")
   };
 
   return (
@@ -123,6 +123,8 @@ const Resume = () => {
               <h1 className="section-title">Resume</h1>
               <button onClick={handleDownload} className="btn btn-primary download-btn">
                 <i className="fas fa-download me-2"></i>
+                <a href={resume_link}> </a>
+
                 Download PDF
               </button>
             </div>
@@ -161,17 +163,16 @@ const Resume = () => {
               <div className="card">
                 <div className="card-body">
                   <p>
-                    Experienced Full Stack Developer with over 3 years of expertise in building scalable web applications. 
-                    Proficient in modern web technologies including React, Node.js, and Python. Strong problem-solving skills 
-                    and ability to work in fast-paced environments. Passionate about creating efficient, user-friendly solutions 
-                    and staying current with emerging technologies.
-                  </p>
+                       I'm Muhammad Mudassir . Machine Learning Enthusiast,Full Stack Developer. I’m a tech enthusiast who loves exploring new ideas and figuring out how to turn them into real, impactful solutions. 
+                  I’m always looking for opportunities to grow, contribute to meaningful projects, and make a positive difference through technology
+                
+                        </p>
                 </div>
               </div>
             </div>
 
             {/* Work Experience */}
-            <div className="resume-section">
+            {/* <div className="resume-section">
               <h3 className="section-heading">Work Experience</h3>
               {experience.map((exp, index) => (
                 <div key={index} className="experience-item card mb-3">
@@ -192,10 +193,10 @@ const Resume = () => {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
 
             {/* Projects */}
-            <div className="resume-section">
+            {/* <div className="resume-section">
               <h3 className="section-heading">Key Projects</h3>
               {projects.map((project, index) => (
                 <div key={index} className="project-item card mb-3">
@@ -215,7 +216,7 @@ const Resume = () => {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
 
           <div className="col-lg-4">

@@ -16,26 +16,26 @@ const Contact = () => {
     {
       icon: 'fas fa-envelope',
       title: 'Email',
-      value: 'your.email@example.com',
-      link: 'mailto:your.email@example.com'
+      value: 'muhammadmudassir981@gmail.com',
+      link: 'muhammadmudassir981@gmail.com'
     },
     {
       icon: 'fas fa-phone',
       title: 'Phone',
-      value: '+1 (234) 567-8900',
-      link: 'tel:+12345678900'
+      value: '+92-3083976682',
+      link: 'tel:+92-3083976682'
     },
     {
       icon: 'fas fa-map-marker-alt',
       title: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Islamabad, Pakistan',
       link: null
     },
     {
       icon: 'fab fa-linkedin',
       title: 'LinkedIn',
-      value: 'linkedin.com/in/yourprofile',
-      link: 'https://linkedin.com/in/yourprofile'
+      value: 'www.linkedin.com/in/muhammad-mudassir-/',
+      link: 'https://www.linkedin.com/in/muhammad-mudassir-/'
     }
   ];
 
@@ -114,18 +114,18 @@ const Contact = () => {
               <div className="social-links">
                 <h5>Follow Me</h5>
                 <div className="social-icons">
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                  <a href="https://github.com/Muhammadmudassir180" target="_blank" rel="noopener noreferrer" className="social-icon">
                     <i className="fab fa-github"></i>
                   </a>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                  <a href="https://www.linkedin.com/in/muhammad-mudassir-/" target="_blank" rel="noopener noreferrer" className="social-icon">
                     <i className="fab fa-linkedin"></i>
                   </a>
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                  {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon">
                     <i className="fab fa-twitter"></i>
-                  </a>
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                  </a> */}
+                  {/* <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
                     <i className="fab fa-instagram"></i>
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>

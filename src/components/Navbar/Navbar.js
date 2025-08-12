@@ -32,7 +32,7 @@ const Navbar = () => {
     <nav className={`navbar navbar-expand-lg fixed-top ${isScrolled ? 'navbar-scrolled' : ''}`}>
       <div className="container">
         <Link className="navbar-brand" to="/">
-          <span className="brand-text">Portfolio</span>
+          <span className="brand-text">Muhammad Mudassir</span>
         </Link>
 
         <button

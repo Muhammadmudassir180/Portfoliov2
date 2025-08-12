@@ -6,72 +6,74 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      title: 'Senior Full Stack Developer',
-      company: 'Tech Solutions Inc.',
-      location: 'San Francisco, CA',
+      title: 'Software and Machine Learning Engineer',
+      company: 'National Aerospace Science and Technology Park',
+      location: 'Islamabad, Pakistan',
       period: 'January 2023 - Present',
       type: 'Full-time',
-      description: 'Leading development of enterprise web applications and mentoring junior developers.',
+      description: 'Leading development of AI and machine Learning Applications and mentoring junior developers.',
       achievements: [
-        'Led a team of 5 developers in building a customer management system',
-        'Improved application performance by 40% through optimization',
-        'Implemented CI/CD pipeline reducing deployment time by 60%',
-        'Mentored 3 junior developers and conducted code reviews'
+        '⚡ Developed a diverse datasets for training autonomous UAV models, ensuring high-quality data for ML pipelines.',
+        '⚡ Engineered computer vision models for ADAS and UAV applications, leveraging deep learning techniques to improve object detection accuracy by 15%.',
+        '⚡ Optimized model training by applying transfer learning with pre-trained YOLO models, reducing training time by 20% and boosting detection accuracy by 10%.',
+        '⚡ Built and Engineered a custom dataset from scratch and applied advanced preprocessing for a hybrid semantic search engine integrating FAISS and MongoDB to retrieve contextually relevant passages from a custom-built corpus for large language model (LLM) prompting.',
+        '⚡ Fine-tuned an LLM (Mistral-7B) to generate context-aware, grounded answers based on retrieved documents using embeddings and engineered prompts.',
+        '⚡ Integrated ML models with backend services using REST APIs, leveraging Node.js and Express.js and deployed on AWS EC2 and AWS Elastic Container Service (ECS).'
       ],
-      technologies: ['React', 'Node.js', 'MongoDB', 'AWS', 'Docker', 'Kubernetes'],
+      technologies: ['Computer Vision', 'Machine Learning', 'MongoDB', 'AWS', 'Docker', 'Large Language Model', 'Natural Langugage Processing'],
       logo: '🏢'
     },
-    {
-      id: 2,
-      title: 'Full Stack Developer',
-      company: 'StartupXYZ',
-      location: 'New York, NY',
-      period: 'March 2021 - December 2022',
-      type: 'Full-time',
-      description: 'Developed and maintained multiple web applications for a fast-growing startup.',
-      achievements: [
-        'Built a real-time chat application serving 10,000+ users',
-        'Developed RESTful APIs handling 1M+ requests daily',
-        'Implemented automated testing increasing code coverage to 85%',
-        'Collaborated with UX team to improve user experience'
-      ],
-      technologies: ['React', 'Express.js', 'PostgreSQL', 'Redis', 'Socket.io', 'Jest'],
-      logo: '🚀'
-    },
-    {
-      id: 3,
-      title: 'Frontend Developer',
-      company: 'Digital Agency ABC',
-      location: 'Los Angeles, CA',
-      period: 'June 2020 - February 2021',
-      type: 'Contract',
-      description: 'Worked on various client projects focusing on frontend development and UI/UX.',
-      achievements: [
-        'Developed 15+ responsive websites for different clients',
-        'Optimized website loading speed by 50%',
-        'Implemented modern CSS frameworks and animations',
-        'Worked closely with designers to ensure pixel-perfect implementations'
-      ],
-      technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'SASS', 'jQuery'],
-      logo: '🎨'
-    },
-    {
-      id: 4,
-      title: 'Junior Developer Intern',
-      company: 'TechCorp',
-      location: 'Austin, TX',
-      period: 'May 2019 - August 2019',
-      type: 'Internship',
-      description: 'Gained hands-on experience in web development and software engineering practices.',
-      achievements: [
-        'Assisted in developing internal tools and utilities',
-        'Learned version control and collaborative development',
-        'Participated in code reviews and team meetings',
-        'Contributed to bug fixes and feature implementations'
-      ],
-      technologies: ['Python', 'Django', 'MySQL', 'Git', 'Linux', 'Docker'],
-      logo: '💼'
-    }
+    // {
+    //   id: 2,
+    //   title: 'Full Stack Developer',
+    //   company: 'StartupXYZ',
+    //   location: 'New York, NY',
+    //   period: 'March 2021 - December 2022',
+    //   type: 'Full-time',
+    //   description: 'Developed and maintained multiple web applications for a fast-growing startup.',
+    //   achievements: [
+    //     'Built a real-time chat application serving 10,000+ users',
+    //     'Developed RESTful APIs handling 1M+ requests daily',
+    //     'Implemented automated testing increasing code coverage to 85%',
+    //     'Collaborated with UX team to improve user experience'
+    //   ],
+    //   technologies: ['React', 'Express.js', 'PostgreSQL', 'Redis', 'Socket.io', 'Jest'],
+    //   logo: '🚀'
+    // },
+    // {
+    //   id: 3,
+    //   title: 'Frontend Developer',
+    //   company: 'Digital Agency ABC',
+    //   location: 'Los Angeles, CA',
+    //   period: 'June 2020 - February 2021',
+    //   type: 'Contract',
+    //   description: 'Worked on various client projects focusing on frontend development and UI/UX.',
+    //   achievements: [
+    //     'Developed 15+ responsive websites for different clients',
+    //     'Optimized website loading speed by 50%',
+    //     'Implemented modern CSS frameworks and animations',
+    //     'Worked closely with designers to ensure pixel-perfect implementations'
+    //   ],
+    //   technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'SASS', 'jQuery'],
+    //   logo: '🎨'
+    // },
+    // {
+    //   id: 4,
+    //   title: 'Junior Developer Intern',
+    //   company: 'TechCorp',
+    //   location: 'Austin, TX',
+    //   period: 'May 2019 - August 2019',
+    //   type: 'Internship',
+    //   description: 'Gained hands-on experience in web development and software engineering practices.',
+    //   achievements: [
+    //     'Assisted in developing internal tools and utilities',
+    //     'Learned version control and collaborative development',
+    //     'Participated in code reviews and team meetings',
+    //     'Contributed to bug fixes and feature implementations'
+    //   ],
+    //   technologies: ['Python', 'Django', 'MySQL', 'Git', 'Linux', 'Docker'],
+    //   logo: '💼'
+    // }
   ];
 
   return (

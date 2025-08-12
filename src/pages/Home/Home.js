@@ -4,12 +4,18 @@ import './Home.css';
 
 const Home = () => {
   const skills = [
-    { name: 'React', level: 90 },
-    { name: 'JavaScript', level: 85 },
-    { name: 'HTML/CSS', level: 90 },
-    { name: 'Node.js', level: 80 },
+    
+    { name: 'Machine Learning', level: 75 },
+    { name: 'Natural Language Processing', level: 73 },
+    { name: 'Large Language Model', level: 73 },
+    { name: 'Computer Vision', level: 75 },
     { name: 'Python', level: 75 },
-    { name: 'SQL', level: 80 }
+    { name: 'JavaScript', level: 72 },
+    { name: 'HTML/CSS', level: 70 },
+    { name: 'Node.js', level: 70 },
+    { name: 'React', level: 70 },
+
+    // { name: 'SQL', level: 80 }
   ];
 
   return (
@@ -21,13 +27,12 @@ const Home = () => {
             <div className="col-lg-6">
               <div className="hero-content fade-in-up">
                 <h1 className="hero-title">
-                  Hi, I'm <span className="text-accent">Your Name</span>
+                  Hi, I'm <span className="text-accent">Muhammad Mudassir</span>
                 </h1>
-                <h2 className="hero-subtitle">Full Stack Developer</h2>
+                <h2 className="hero-subtitle">Software and Machine Learning Engineer</h2>
                 <p className="hero-description">
-                  Passionate about creating innovative web solutions and building 
-                  exceptional user experiences. I specialize in modern web technologies 
-                  and love turning complex problems into simple, beautiful solutions.
+                  I'm Muhammad Mudassir . Machine Learning Enthusiast,Full Stack Developer. I’m a tech enthusiast who loves exploring new ideas and figuring out how to turn them into real, impactful solutions. 
+                  I’m always looking for opportunities to grow, contribute to meaningful projects, and make a positive difference through technology
                 </p>
                 <div className="hero-buttons">
                   <Link to="/projects" className="btn btn-primary me-3">
@@ -49,8 +54,8 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="profile-info">
-                    <h3>Your Name</h3>
-                    <p>Full Stack Developer</p>
+                    <h3>Muhammad Mudassir</h3>
+                    <p>Software and ML Engineer</p>
                   </div>
                 </div>
               </div>

@@ -8,78 +8,56 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
+      title: 'Data Manager Backend Application',
       description: 'A full-stack e-commerce platform with user authentication, product management, and payment integration.',
       image: '🛒',
       category: 'fullstack',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'AWS'],
+      technologies: ['React', 'Node.js', 'MongoDB', "Express.js", 'AWS'],
       liveUrl: 'https://project1.com',
-      githubUrl: 'https://github.com/username/project1',
+      githubUrl: 'https://github.com/Muhammadmudassir180/Data-Backend-Manager.git',
       features: [
-        'User authentication and authorization',
-        'Product catalog with search and filters',
-        'Shopping cart and checkout process',
-        'Payment integration with Stripe',
+        'I designed and developed a comprehensive Backend Data Manager, utilizing MongoDB as the primary database to store data.',
+        'This included creating fully functional routes for updating Data, implementing JWT and Express Authentication for secure login and routing, and developing Error Handling Middleware to ensure smooth operation.',
+        'Additionally, I used Bcrypt to encrypt passwords, enhancing security measures within the system.',
         'Admin dashboard for product management'
       ],
       status: 'completed'
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates and team collaboration features.',
+      title: 'Infrared Search and Tracking System',
+      description: 'A Surveillance system utilizing IR cameras to detect and trach',
       image: '📋',
       category: 'frontend',
-      technologies: ['React', 'Firebase', 'Material-UI', 'Socket.io'],
-      liveUrl: 'https://project2.com',
-      githubUrl: 'https://github.com/username/project2',
+      technologies: ['Computer Vision', 'Deep Learning'],
+      // liveUrl: 'https://project2.com',
+      // githubUrl: 'https://github.com/username/project2',
       features: [
-        'Real-time task updates',
-        'Team collaboration',
-        'Task assignment and deadlines',
-        'Progress tracking',
-        'File attachments'
+        'The development of a border surveillance system , utilizing IR cameras to detect and track threats.',
+        'Optimized deep learning algorithms using YOLOv8 and YOLOv10 models for precise detection and Deep Learning Trackers for tracking, improving system accuracy by 25%',
+        'Additionally, I integrated the system with a Pan-Tilt Unit, enhancing its control and flexibility',
       ],
       status: 'completed'
     },
     {
       id: 3,
-      title: 'Weather Dashboard',
-      description: 'A weather application that displays current weather and forecasts using multiple weather APIs.',
+      title: 'LLM-Powered Hybrid RAG System for Domain Knowledge Retrieval',
+      description: 'Built an end-to-end NLP system that integrates semantic search with LLMs to generate context-aware responses grounded in authentic sources',
       image: '🌤️',
       category: 'frontend',
       technologies: ['JavaScript', 'HTML5', 'CSS3', 'Weather API'],
       liveUrl: 'https://project3.com',
       githubUrl: 'https://github.com/username/project3',
       features: [
-        'Current weather display',
-        '5-day forecast',
-        'Location-based weather',
-        'Weather alerts',
-        'Responsive design'
+        'Built an end-to-end NLP system that integrates semantic search with LLMs to generate context-aware responses grounded in authentic sources.',
+        'Designed custom datasets from scratch, performed embedding optimization, and fine-tuned transformer models for improved relevance and factual accuracy.',
+        'Leveraged tools like FAISS and MongoDB to bridge structured and unstructured retrieval. Demonstrates strong foundations in ML, NLP pipelines, and practical deployment of LLMs.',
       ],
       status: 'completed'
     },
+   
     {
       id: 4,
-      title: 'Blog Platform',
-      description: 'A content management system for creating and managing blog posts with rich text editing.',
-      image: '📝',
-      category: 'fullstack',
-      technologies: ['React', 'Express.js', 'PostgreSQL', 'AWS S3'],
-      liveUrl: 'https://project4.com',
-      githubUrl: 'https://github.com/username/project4',
-      features: [
-        'Rich text editor',
-        'Image upload and management',
-        'SEO optimization',
-        'Comment system',
-        'Admin panel'
-      ],
-      status: 'in-progress'
-    },
-    {
-      id: 5,
       title: 'Portfolio Website',
       description: 'A responsive portfolio website showcasing projects and skills with modern design.',
       image: '🎨',
@@ -96,24 +74,24 @@ const Projects = () => {
       ],
       status: 'completed'
     },
-    {
-      id: 6,
-      title: 'API Gateway',
-      description: 'A microservices API gateway with authentication, rate limiting, and request routing.',
-      image: '🔗',
-      category: 'backend',
-      technologies: ['Node.js', 'Express.js', 'Redis', 'JWT', 'Docker'],
-      liveUrl: 'https://project6.com',
-      githubUrl: 'https://github.com/username/project6',
-      features: [
-        'Request routing',
-        'Authentication middleware',
-        'Rate limiting',
-        'Request logging',
-        'Load balancing'
-      ],
-      status: 'completed'
-    }
+    // {
+    //   id: 6,
+    //   title: 'API Gateway',
+    //   description: 'A microservices API gateway with authentication, rate limiting, and request routing.',
+    //   image: '🔗',
+    //   category: 'backend',
+    //   technologies: ['Node.js', 'Express.js', 'Redis', 'JWT', 'Docker'],
+    //   liveUrl: 'https://project6.com',
+    //   githubUrl: 'https://github.com/username/project6',
+    //   features: [
+    //     'Request routing',
+    //     'Authentication middleware',
+    //     'Rate limiting',
+    //     'Request logging',
+    //     'Load balancing'
+    //   ],
+    //   status: 'completed'
+    // }
   ];
 
   const filters = [

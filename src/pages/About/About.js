@@ -3,41 +3,42 @@ import './About.css';
 
 const About = () => {
   const personalInfo = {
-    name: 'Your Name',
+    name: 'Muhammad Mudassir ',
     age: '25',
-    location: 'Your City, Country',
-    email: 'your.email@example.com',
-    phone: '+1 234 567 8900',
-    website: 'www.yourwebsite.com',
+    location: 'Islamabad, Pakistan',
+    email: 'muhammadmudassir981@gmail.com',
+    phone: '+92-3083976682',
+    website: 'www.mudassir.nucleartech.online',
     freelance: 'Available'
   };
 
   const skills = [
-    { category: 'Frontend', items: ['React', 'JavaScript', 'HTML5', 'CSS3', 'Bootstrap', 'SASS'] },
-    { category: 'Backend', items: ['Node.js', 'Express.js', 'Python', 'Django', 'PHP', 'MySQL'] },
-    { category: 'Tools', items: ['Git', 'VS Code', 'Docker', 'AWS', 'Figma', 'Postman'] },
-    { category: 'Other', items: ['REST APIs', 'GraphQL', 'MongoDB', 'Firebase', 'Jest', 'Webpack'] }
+    { category: 'Frontend', items: ['React', 'JavaScript', 'HTML5', 'CSS3' ] },
+    { category: 'Framework', items: ['Node.js', 'Express.js', 'Python', 'PyTorch',' Scikit-Learn','TensorFlow']},
+    { category: 'DataBases', items: ['MongoDB', 'MySQL', "FAISS"] },
+    { category: 'Tools', items: ['Git', 'Docker', 'AWS'] },
+    // { category: 'Other', items: ['REST APIs', 'GraphQL', 'MongoDB', 'Firebase', 'Jest', 'Webpack'] }
   ];
 
   const experiences = [
     {
       year: '2023 - Present',
-      title: 'Senior Full Stack Developer',
-      company: 'Tech Company',
-      description: 'Leading development of web applications using modern technologies.'
+      title: 'Software and Machine learning Engineer',
+      company: 'National Aerospace Science and Technology Park',
+      description: 'Developed and Deployed multiple Machine Learning and AI applications.'
     },
-    {
-      year: '2021 - 2023',
-      title: 'Full Stack Developer',
-      company: 'Startup Inc',
-      description: 'Developed and maintained multiple web applications and APIs.'
-    },
-    {
-      year: '2020 - 2021',
-      title: 'Junior Developer',
-      company: 'Digital Agency',
-      description: 'Worked on frontend development and UI/UX improvements.'
-    }
+    // {
+    //   year: '2021 - 2023',
+    //   title: 'Full Stack Developer',
+    //   company: 'Startup Inc',
+    //   description: 'Developed and maintained multiple web applications and APIs.'
+    // },
+    // {
+    //   year: '2020 - 2021',
+    //   title: 'Junior Developer',
+    //   company: 'Digital Agency',
+    //   description: 'Worked on frontend development and UI/UX improvements.'
+    // }
   ];
 
   return (
@@ -80,12 +81,12 @@ const About = () => {
               </div>
               <div className="card-body">
                 <p>
-                  I am a passionate Full Stack Developer with over 3 years of experience in creating 
-                  innovative web solutions. My journey in technology started with a curiosity to build 
+                  I am a passionate Software and Machine Learning Engineer with over 3 years of experience in creating 
+                  innovative AI and software solutions. My journey in technology started with a curiosity to build 
                   things that make a difference in people's lives.
                 </p>
                 <p>
-                  I specialize in modern web technologies including React, Node.js, and Python. 
+                  I specialize in modern AI, Machine Learning and Software technologies including LLM, NLP, Computer Vision, , Node.js, and Python. 
                   I love solving complex problems and turning ideas into reality through clean, 
                   efficient, and maintainable code.
                 </p>

@@ -7,89 +7,89 @@ const Education = () => {
     {
       id: 1,
       degree: 'Master of Science in Computer Science',
-      institution: 'Stanford University',
-      location: 'Stanford, CA',
-      period: '2021 - 2023',
-      gpa: '3.9/4.0',
-      description: 'Specialized in Artificial Intelligence and Machine Learning with focus on deep learning applications.',
-      achievements: [
-        'Graduated with Distinction',
-        'Research Assistant in AI Lab',
-        'Published 2 research papers',
-        'Teaching Assistant for CS101'
-      ],
-      courses: ['Advanced Algorithms', 'Machine Learning', 'Deep Learning', 'Computer Vision', 'Natural Language Processing'],
+      institution: 'National University of Science and Technology',
+      location: 'Islamabad, Pakistan',
+      period: '2024 - present',
+      // gpa: '3.9/4.0',
+      description: 'Specialized in Artificial Intelligence and Machine Learning with focus on deep learning applications and Large Language Models.',
+      // achievements: [
+      //   'Graduated with Distinction',
+      //   'Research Assistant in AI Lab',
+      //   'Published 2 research papers',
+      //   'Teaching Assistant for CS101'
+      // ],
+      courses: ['Advanced Algorithms', 'Machine Learning', 'Deep Learning', 'GenAI', 'Natural Language Processing'],
       logo: '🎓'
     },
     {
       id: 2,
-      degree: 'Bachelor of Science in Computer Science',
-      institution: 'University of California, Berkeley',
-      location: 'Berkeley, CA',
-      period: '2017 - 2021',
-      gpa: '3.8/4.0',
-      description: 'Comprehensive study of computer science fundamentals with emphasis on software engineering and web development.',
-      achievements: [
-        'Dean\'s List (All Semesters)',
-        'Computer Science Honor Society',
-        'Capstone Project: E-commerce Platform',
-        'Internship at Google'
-      ],
-      courses: ['Data Structures', 'Algorithms', 'Software Engineering', 'Database Systems', 'Web Development'],
+      degree: 'Bachelor of Science in Electrical Engineering',
+      institution: 'Institute of Space Technology',
+      location: 'Islamabad, Pakistan',
+      period: '2019 - 2023',
+      gpa: '3.0/4.0',
+      description: 'Comprehensive study of Electrical Engineering fundamentals with emphasis on Signal System, Control Systems and software engineering.',
+      // achievements: [
+      //   'Dean\'s List (All Semesters)',
+      //   'Computer Science Honor Society',
+      //   'Capstone Project: E-commerce Platform',
+      //   'Internship at Google'
+      // ],
+      courses: ['Signal and Systems', 'Digital Signal Processing', 'Control System', 'System Architecture', 'System Design'],
       logo: '🏛️'
     },
-    {
-      id: 3,
-      degree: 'High School Diploma',
-      institution: 'Tech High School',
-      location: 'San Francisco, CA',
-      period: '2013 - 2017',
-      gpa: '4.0/4.0',
-      description: 'Strong foundation in STEM subjects with focus on computer science and mathematics.',
-      achievements: [
-        'Valedictorian',
-        'National Merit Scholar',
-        'President of Computer Club',
-        'First Place in Science Fair'
-      ],
-      courses: ['AP Computer Science', 'AP Calculus', 'AP Physics', 'AP Statistics', 'Advanced Programming'],
-      logo: '🎒'
-    }
+    // {
+    //   id: 3,
+    //   degree: 'High School Diploma',
+    //   institution: 'Tech High School',
+    //   location: 'San Francisco, CA',
+    //   period: '2013 - 2017',
+    //   gpa: '4.0/4.0',
+    //   description: 'Strong foundation in STEM subjects with focus on computer science and mathematics.',
+    //   achievements: [
+    //     'Valedictorian',
+    //     'National Merit Scholar',
+    //     'President of Computer Club',
+    //     'First Place in Science Fair'
+    //   ],
+    //   courses: ['AP Computer Science', 'AP Calculus', 'AP Physics', 'AP Statistics', 'Advanced Programming'],
+    //   logo: '🎒'
+    // }
   ];
 
   const certifications = [
-    {
-      id: 1,
-      name: 'AWS Certified Solutions Architect',
-      issuer: 'Amazon Web Services',
-      date: '2023',
-      credential: 'AWS-CSA-001',
-      logo: '☁️'
-    },
-    {
-      id: 2,
-      name: 'Google Cloud Professional Developer',
-      issuer: 'Google Cloud',
-      date: '2022',
-      credential: 'GCP-PD-002',
-      logo: '🌐'
-    },
-    {
-      id: 3,
-      name: 'Certified Scrum Master',
-      issuer: 'Scrum Alliance',
-      date: '2021',
-      credential: 'CSM-003',
-      logo: '📋'
-    },
-    {
-      id: 4,
-      name: 'Microsoft Certified: Azure Developer',
-      issuer: 'Microsoft',
-      date: '2022',
-      credential: 'MS-AZ-004',
-      logo: '💻'
-    }
+    // {
+    //   id: 1,
+    //   name: 'AWS Certified Solutions Architect',
+    //   issuer: 'Amazon Web Services',
+    //   date: '2023',
+    //   credential: 'AWS-CSA-001',
+    //   logo: '☁️'
+    // },
+    // {
+    //   id: 2,
+    //   name: 'Google Cloud Professional Developer',
+    //   issuer: 'Google Cloud',
+    //   date: '2022',
+    //   credential: 'GCP-PD-002',
+    //   logo: '🌐'
+    // },
+    // {
+    //   id: 3,
+    //   name: 'Certified Scrum Master',
+    //   issuer: 'Scrum Alliance',
+    //   date: '2021',
+    //   credential: 'CSM-003',
+    //   logo: '📋'
+    // },
+    // {
+    //   id: 4,
+    //   name: 'Microsoft Certified: Azure Developer',
+    //   issuer: 'Microsoft',
+    //   date: '2022',
+    //   credential: 'MS-AZ-004',
+    //   logo: '💻'
+    // }
   ];
 
   return (
@@ -167,7 +167,7 @@ const Education = () => {
         {/* Certifications Section */}
         <div className="row mb-5">
           <div className="col-12">
-            <h2 className="section-subtitle">Professional Certifications</h2>
+            {/* <h2 className="section-subtitle">Professional Certifications</h2> */}
           </div>
           {certifications.map((cert) => (
             <div key={cert.id} className="col-lg-6 col-md-6 mb-4">
