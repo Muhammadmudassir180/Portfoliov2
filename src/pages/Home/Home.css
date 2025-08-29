@@ -76,8 +76,8 @@
 }
 
 .placeholder-image {
-  width: 150px;
-  height: 150px;
+  width: 170px;
+  height: 160px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--accent-color), var(--success-color));
   display: flex;
@@ -252,3 +252,4 @@
     gap: 0.5rem;
   }
 }
+

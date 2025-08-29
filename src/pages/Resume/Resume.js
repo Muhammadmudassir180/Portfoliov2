@@ -9,13 +9,14 @@ const Resume = () => {
     phone: '+92-3083976682',
     location: 'Islamabad, Pakistan',
     website: 'mudassir.nucleartech.online',
-    linkedin: 'linkedin.com/in/yourprofilhttps://www.linkedin.com/in/muhammad-mudassir-/e',
+    linkedin: 'www.linkedin.com/in/muhammad-mudassir-/',
     github: 'https://github.com/Muhammadmudassir180'
   };
 
   const skills = {
     'Programming Languages': ['JavaScript', 'Python', 'C++'],
     'Frontend Technologies': ['React', 'HTML5', 'CSS3'],
+    'AI Technologies': ['Computer Vision', 'Natural Language Processing', 'Machine Learning', 'Deep Learning', 'Large Language Models'],
     'Backend Technologies': ['Node.js', 'Express.js', 'FastAPI',],
     'Databases': ['MongoDB', 'MySQL', 'Redis'],
     'Cloud & DevOps': ['AWS', 'Docker', 'CI/CD', 'Git'],
@@ -74,7 +75,7 @@ const Resume = () => {
     },
     {
       degree: 'Bachelor of Science in Electrical Engineering',
-      institution: 'University of California, Berkeley',
+      institution: 'Institute of Space Technology',
       period: '2019 - 2023',
       gpa: '3/4.0',
       highlights: ['Signal and Systems', 'Digital Signal Processing', 'Control System', 'System Architecture', 'System Design']
@@ -284,3 +285,4 @@ const Resume = () => {
 };
 
 export default Resume;
+

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import profile_image from "../../Mudassir v2.jpg";
 
 const Home = () => {
   const skills = [
@@ -49,8 +50,10 @@ const Home = () => {
                 <div className="profile-card">
                   <div className="profile-image">
                     {/* Add your profile image here */}
+                    
                     <div className="placeholder-image">
-                      <i className="fas fa-user"></i>
+                      {/* <i className="fas fa-user" ></i> */}
+                      <img   className="placeholder-image" src={profile_image}></img>
                     </div>
                   </div>
                   <div className="profile-info">
@@ -113,3 +116,4 @@ const Home = () => {
 };
 
 export default Home;
+

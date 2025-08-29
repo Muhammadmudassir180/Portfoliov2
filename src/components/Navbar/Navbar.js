@@ -18,10 +18,11 @@ const Navbar = () => {
 
   const navLinks = [
     { path: '/', label: 'Home' },
-    { path: '/about', label: 'About' },
+    
     { path: '/experience', label: 'Experience' },
     { path: '/education', label: 'Education' },
     { path: '/projects', label: 'Projects' },
+    { path: '/about', label: 'About' },
     { path: '/contact', label: 'Contact' },
     { path: '/resume', label: 'Resume' }
   ];
@@ -67,3 +68,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
