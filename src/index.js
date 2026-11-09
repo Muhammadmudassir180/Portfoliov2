@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { setFavicon } from './favicon';
+import { profile } from './portfolio';
+
+setFavicon(profile.photo);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -1,11 +1,11 @@
 // ALL PORTFOLIO CONTENT LIVES IN THIS FILE. Every page reads from here, so change a detail once and it updates everywhere.
-import photo from './profile.png';
 
 export const profile = {
   name: 'Muhammad Mudassir',
   role: 'Software and Machine Learning Engineer',
   shortRole: 'Software and ML Engineer',
-  photo,
+  // Put your image in the public folder and write its path here. It updates Home, Résumé and the browser-tab icon.
+  photo: '/profile.png',
   intro: "I'm Mudassir, a machine learning engineer who likes making AI work outside the lab. I've built computer vision for driver assistance and surveillance, and today I teach speech models to understand languages most AI overlooks.",
   tagline: 'Software and machine learning engineer building computer vision and LLM systems in Islamabad.',
   summary: 'Software and machine learning engineer with over three years building computer vision systems for driver assistance and surveillance, and retrieval-augmented LLM applications. I take models from raw data to deployed, production APIs.',
