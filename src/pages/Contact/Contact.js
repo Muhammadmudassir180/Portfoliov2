@@ -1,251 +1,119 @@
 import React, { useState } from 'react';
+import Icon from '../../components/Icon/Icon';
+import { sendMessage } from './sendMessage';
+import { profile, availability, pages } from '../../portfolio';
 import './Contact.css';
 
+const contactInfo = [
+  { icon: 'envelope', title: 'Email', value: profile.email, link: `mailto:${profile.email}` },
+  { icon: 'phone', title: 'Phone', value: profile.phone, link: `tel:${profile.phone.replace(/[^+\d]/g, '')}` },
+  { icon: 'location-dot', title: 'Location', value: profile.location, link: null },
+  { icon: 'linkedin-in', title: 'LinkedIn', value: profile.linkedin.label, link: profile.linkedin.url },
+  { icon: 'github', title: 'GitHub', value: profile.github.label, link: profile.github.url }
+];
+
+const empty = { name: '', email: '', subject: '', message: '', botcheck: false };
+
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
-
-  const contactInfo = [
-    {
-      icon: 'fas fa-envelope',
-      title: 'Email',
-      value: 'muhammadmudassir980',
-      link: 'muhammadmudassir980@gmail.com'
-    },
-    {
-      icon: 'fas fa-phone',
-      title: 'Phone',
-      value: '+92-3083976682',
-      link: 'tel:+92-3083976682'
-    },
-    {
-      icon: 'fas fa-map-marker-alt',
-      title: 'Location',
-      value: 'Islamabad, Pakistan',
-      link: null
-    },
-    {
-      icon: 'fab fa-linkedin',
-      title: 'LinkedIn',
-      value: 'in/muhammad-mudassir-/',
-      link: 'https://www.linkedin.com/in/muhammad-mudassir-/'
-    }
-  ];
+  const [formData, setFormData] = useState(empty);
+  const [status, setStatus] = useState({ state: 'idle', error: '' });
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    const { name, type, value, checked } = e.target;
+    setFormData({ ...formData, [name]: type === 'checkbox' ? checked : value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus(null);
-
-    // Simulate form submission
+    setStatus({ state: 'sending', error: '' });
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-    } catch (error) {
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
+      await sendMessage(formData);
+      setFormData(empty);
+      setStatus({ state: 'sent', error: '' });
+    } catch (err) {
+      // Keep what the visitor typed so nothing is lost
+      setStatus({ state: 'error', error: err.message });
     }
   };
 
+  const sending = status.state === 'sending';
+
   return (
-    <div className="contact">
-      <div className="container">
-        {/* Header */}
-        <div className="row mb-5">
-          <div className="col-12">
-            <h1 className="section-title">Get In Touch</h1>
-            <p className="text-center text-secondary">
-              I'm always interested in hearing about new opportunities and exciting projects.
-            </p>
-          </div>
-        </div>
-
-        <div className="row">
-          {/* Contact Information */}
-          <div className="col-lg-4 mb-4">
-            <div className="contact-info">
-              <h3>Contact Information</h3>
-              <p className="contact-description">
-                Feel free to reach out to me through any of these channels. I'll get back to you as soon as possible.
-              </p>
-              
-              <div className="contact-items">
-                {contactInfo.map((item, index) => (
-                  <div key={index} className="contact-item">
-                    <div className="contact-icon">
-                      <i className={item.icon}></i>
-                    </div>
-                    <div className="contact-details">
-                      <h5>{item.title}</h5>
-                      {item.link ? (
-                        <a href={item.link} target={item.link.startsWith('http') ? '_blank' : '_self'} rel="noopener noreferrer">
-                          {item.value}
-                        </a>
-                      ) : (
-                        <span>{item.value}</span>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="social-links">
-                <h5>Follow Me</h5>
-                <div className="social-icons">
-                  <a href="https://github.com/Muhammadmudassir180" target="_blank" rel="noopener noreferrer" className="social-icon">
-                    <i className="fab fa-github"></i>
-                  </a>
-                  <a href="https://www.linkedin.com/in/muhammad-mudassir-/" target="_blank" rel="noopener noreferrer" className="social-icon">
-                    <i className="fab fa-linkedin"></i>
-                  </a>
-                  {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-                    <i className="fab fa-twitter"></i>
-                  </a> */}
-                  {/* <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-                    <i className="fab fa-instagram"></i>
-                  </a> */}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className="col-lg-8">
-            <div className="contact-form-card card">
-              <div className="card-header">
-                <h3>Send Me a Message</h3>
-              </div>
-              <div className="card-body">
-                <form onSubmit={handleSubmit}>
-                  <div className="row">
-                    <div className="col-md-6 mb-3">
-                      <label htmlFor="name" className="form-label">Name *</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                      />
-                    </div>
-                    <div className="col-md-6 mb-3">
-                      <label htmlFor="email" className="form-label">Email *</label>
-                      <input
-                        type="email"
-                        className="form-control"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                      />
-                    </div>
-                  </div>
-                  
-                  <div className="mb-3">
-                    <label htmlFor="subject" className="form-label">Subject *</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      required
-                    />
-                  </div>
-                  
-                  <div className="mb-3">
-                    <label htmlFor="message" className="form-label">Message *</label>
-                    <textarea
-                      className="form-control"
-                      id="message"
-                      name="message"
-                      rows="5"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      required
-                    ></textarea>
-                  </div>
-
-                  {submitStatus && (
-                    <div className={`alert ${submitStatus === 'success' ? 'alert-success' : 'alert-danger'}`}>
-                      {submitStatus === 'success' 
-                        ? 'Thank you! Your message has been sent successfully.' 
-                        : 'Sorry, there was an error sending your message. Please try again.'
-                      }
-                    </div>
-                  )}
-
-                  <button 
-                    type="submit" 
-                    className="btn btn-primary"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <i className="fas fa-spinner fa-spin me-2"></i>
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        <i className="fas fa-paper-plane me-2"></i>
-                        Send Message
-                      </>
-                    )}
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Additional Info */}
-        <div className="row mt-5">
-          <div className="col-12">
-            <div className="card text-center">
-              <div className="card-body">
-                <h3>Let's Work Together</h3>
-                <p className="mb-4">
-                  I'm currently available for freelance work and full-time opportunities. 
-                  Whether you have a project in mind or just want to chat, I'd love to hear from you.
-                </p>
-                <div className="availability-badges">
-                  <span className="badge bg-success me-2">Available for Freelance</span>
-                  <span className="badge bg-primary">Open to Full-time</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div className="contact container">
+      <title>{`Contact | ${profile.name}`}</title>
+      <div className="page-head">
+        <h1>{pages.contact.heading}</h1>
+        <p>{pages.contact.intro}</p>
       </div>
+
+      <section className="block">
+        <div className="contact-grid">
+          <div className="c-items">
+            {contactInfo.map((item) => {
+              const body = (
+                <>
+                  <span className="ico"><Icon name={item.icon} /></span>
+                  <div><small>{item.title}</small><strong>{item.value}</strong></div>
+                </>
+              );
+              if (!item.link) return <div key={item.title} className="c-item glass">{body}</div>;
+              const external = item.link.startsWith('http');
+              return (
+                <a key={item.title} className="c-item glass lift" href={item.link} {...(external && { target: '_blank', rel: 'noopener noreferrer' })}>
+                  {body}
+                </a>
+              );
+            })}
+          </div>
+
+          <form className="form glass" onSubmit={handleSubmit}>
+            <h2>Send me a message</h2>
+            <div className="form-row">
+              <div className="field">
+                <label htmlFor="name">Name</label>
+                <input id="name" name="name" autoComplete="name" maxLength={100} value={formData.name} onChange={handleInputChange} required />
+              </div>
+              <div className="field">
+                <label htmlFor="email">Email</label>
+                <input id="email" name="email" type="email" autoComplete="email" maxLength={200} value={formData.email} onChange={handleInputChange} required />
+              </div>
+            </div>
+            <div className="field">
+              <label htmlFor="subject">Subject</label>
+              <input id="subject" name="subject" maxLength={150} value={formData.subject} onChange={handleInputChange} required />
+            </div>
+            <div className="field">
+              <label htmlFor="message">Message</label>
+              <textarea id="message" name="message" rows="5" maxLength={5000} value={formData.message} onChange={handleInputChange} required></textarea>
+            </div>
+            {/* Spam trap: hidden from people, bots tick it and the service drops the message */}
+            <input type="checkbox" name="botcheck" className="botcheck" tabIndex={-1} autoComplete="off" aria-hidden="true" checked={formData.botcheck} onChange={handleInputChange} />
+            <div className="form-foot">
+              <button className="btn btn-main" type="submit" disabled={sending}>
+                <Icon name="paper-plane" />{sending ? 'Sending…' : 'Send message'}
+              </button>
+              <p role="status" className={status.state === 'sent' ? 'form-ok' : status.state === 'error' ? 'form-err' : undefined}>
+                {status.state === 'sent' && "Thanks! Your message has been sent. I'll reply by email."}
+                {status.state === 'error' && `${status.error} Please try again, or email me at ${profile.email}.`}
+                {(status.state === 'idle' || sending) && 'Your message comes straight to my inbox.'}
+              </p>
+            </div>
+          </form>
+        </div>
+
+        <div className="avail glass">
+          <div>
+            <h2>{availability.heading}</h2>
+            <p>{availability.text}</p>
+          </div>
+          <div className="avail-badges">
+            <span className="badge badge-ok">{availability.freelanceBadge}</span>
+            <span className="badge badge-ac">{availability.fullTimeBadge}</span>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
 
 export default Contact;
-
