@@ -1,156 +1,77 @@
 import React from 'react';
+import Icon from '../../components/Icon/Icon';
+import { profile, availability, about, journey, skills, pages } from '../../portfolio';
 import './About.css';
 
-const About = () => {
-  const personalInfo = {
-    name: 'Muhammad Mudassir ',
-    age: '25',
-    location: 'Islamabad, Pakistan',
-    email: 'muhammadmudassir981@gmail.com',
-    phone: '+92-3083976682',
-    website: 'www.mudassir.nucleartech.online',
-    freelance: 'Available'
-  };
+const personalInfo = [
+  ['Name', profile.name],
+  ['Location', profile.location],
+  ['Email', profile.email],
+  ['Phone', profile.phone],
+  ['Website', profile.website]
+];
 
-  const skills = [
-    { category: 'Frontend', items: ['React', 'JavaScript', 'HTML5', 'CSS3' ] },
-    { category: 'Framework', items: ['Node.js', 'Express.js', 'Python', 'PyTorch',' Scikit-Learn','TensorFlow']},
-    { category: 'DataBases', items: ['MongoDB', 'MySQL', "FAISS"] },
-    { category: 'Tools', items: ['Git', 'Docker', 'AWS'] },
-    // { category: 'Other', items: ['REST APIs', 'GraphQL', 'MongoDB', 'Firebase', 'Jest', 'Webpack'] }
-  ];
+// From this many entries, timeline cards shrink to year and heading and open on hover or focus
+const COMPACT_FROM = 10;
+const compact = journey.length >= COMPACT_FROM;
 
-  const experiences = [
-    {
-      year: '2023 - Present',
-      title: 'Software and Machine learning Engineer',
-      company: 'National Aerospace Science and Technology Park',
-      description: 'Developed and Deployed multiple Machine Learning and AI applications.'
-    },
-    // {
-    //   year: '2021 - 2023',
-    //   title: 'Full Stack Developer',
-    //   company: 'Startup Inc',
-    //   description: 'Developed and maintained multiple web applications and APIs.'
-    // },
-    // {
-    //   year: '2020 - 2021',
-    //   title: 'Junior Developer',
-    //   company: 'Digital Agency',
-    //   description: 'Worked on frontend development and UI/UX improvements.'
-    // }
-  ];
+const About = () => (
+  <div className="about container">
+    <title>{`About | ${profile.name}`}</title>
+    <div className="page-head">
+      <h1>{pages.about.heading}</h1>
+      <p>{pages.about.intro}</p>
+    </div>
 
-  return (
-    <div className="about">
-      <div className="container">
-        {/* Header Section */}
-        <div className="row mb-5">
-          <div className="col-12">
-            <h1 className="section-title">About Me</h1>
-            <p className="text-center text-secondary">
-              Get to know me better and understand my journey in the world of technology.
-            </p>
-          </div>
+    <section className="block">
+      <div className="about-grid">
+        <div className="panel glass">
+          <h2>Personal information</h2>
+          <dl className="info">
+            {personalInfo.map(([k, v]) => (
+              <div key={k}><dt>{k}</dt><dd>{v}</dd></div>
+            ))}
+            <div><dt>Freelance</dt><dd><span className="badge badge-ok">{availability.freelance}</span></dd></div>
+          </dl>
         </div>
-
-        {/* Personal Information */}
-        <div className="row mb-5">
-          <div className="col-lg-6 mb-4">
-            <div className="card h-100">
-              <div className="card-header">
-                <h3>Personal Information</h3>
-              </div>
-              <div className="card-body">
-                <div className="personal-info">
-                  {Object.entries(personalInfo).map(([key, value]) => (
-                    <div key={key} className="info-item">
-                      <span className="info-label">{key.charAt(0).toUpperCase() + key.slice(1)}:</span>
-                      <span className="info-value">{value}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="col-lg-6 mb-4">
-            <div className="card h-100">
-              <div className="card-header">
-                <h3>About Me</h3>
-              </div>
-              <div className="card-body">
-                <p>
-                  I am a passionate Software and Machine Learning Engineer with over 3 years of experience in creating 
-                  innovative AI and software solutions. My journey in technology started with a curiosity to build 
-                  things that make a difference in people's lives.
-                </p>
-                <p>
-                  I specialize in modern AI, Machine Learning and Software technologies including LLM, NLP, Computer Vision, , Node.js, and Python. 
-                  I love solving complex problems and turning ideas into reality through clean, 
-                  efficient, and maintainable code.
-                </p>
-                <p>
-                  When I'm not coding, you can find me exploring new technologies, contributing to 
-                  open-source projects, or sharing knowledge with the developer community.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Skills Section */}
-        <div className="row mb-5">
-          <div className="col-12">
-            <h2 className="section-title">Skills & Technologies</h2>
-          </div>
-          {skills.map((skillGroup) => (
-            <div key={skillGroup.category} className="col-lg-6 col-md-6 mb-4">
-              <div className="card">
-                <div className="card-header">
-                  <h4>{skillGroup.category}</h4>
-                </div>
-                <div className="card-body">
-                  <div className="skills-grid">
-                    {skillGroup.items.map((skill) => (
-                      <span key={skill} className="skill-tag">
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Experience Timeline */}
-        <div className="row">
-          <div className="col-12">
-            <h2 className="section-title">Professional Journey</h2>
-            <div className="timeline">
-              {experiences.map((experience, index) => (
-                <div key={index} className="timeline-item">
-                  <div className="timeline-marker"></div>
-                  <div className="timeline-content card">
-                    <div className="card-body">
-                      <div className="timeline-header">
-                        <h5 className="timeline-title">{experience.title}</h5>
-                        <span className="timeline-year">{experience.year}</span>
-                      </div>
-                      <h6 className="timeline-company">{experience.company}</h6>
-                      <p className="timeline-description">{experience.description}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="panel glass">
+          <h2>Who I am</h2>
+          {about.map((p) => <p key={p}>{p}</p>)}
         </div>
       </div>
-    </div>
-  );
-};
+    </section>
+
+    <section className="block" aria-labelledby="journey-h">
+      <div className="h2-row"><h2 className="h2" id="journey-h">My journey</h2></div>
+      <ol className={`journey${compact ? ' journey-compact' : ''}`} style={{ '--cols': journey.length + 1 }}>
+        {journey.map((j, i) => (
+          <li key={`${j.title}-${j.text}`} className={`t-item${i >= journey.length / 2 ? ' opens-left' : ''}`} style={{ '--col': i + 1 }}>
+            <span className="t-dot" aria-hidden="true"></span>
+            <article className="step glass lift" tabIndex={compact ? 0 : undefined}>
+              <div className="step-top">
+                <span className="step-year">{j.year}</span>
+                <span className="ico"><Icon name={j.icon} /></span>
+              </div>
+              <h3>{j.title}</h3>
+              <p>{j.text}</p>
+            </article>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section className="block" aria-labelledby="tech-h">
+      <div className="h2-row"><h2 className="h2" id="tech-h">Skills and technologies</h2></div>
+      <div className="cards-2">
+        {skills.map((s) => (
+          <div key={s.title} className="skill glass lift">
+            <div className="skill-top"><span className="ico"><Icon name={s.icon} /></span><h3>{s.title}</h3></div>
+            <ul className="chips">{s.items.map((t) => <li key={t}>{t}</li>)}</ul>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+);
 
 export default About;
-

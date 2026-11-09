@@ -1,71 +1,55 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import Icon from '../Icon/Icon';
+import { profile } from '../../portfolio';
 import './Navbar.css';
 
+const navLinks = [
+  { path: '/', label: 'Home' },
+  { path: '/experience', label: 'Experience' },
+  { path: '/education', label: 'Education' },
+  { path: '/projects', label: 'Projects' },
+  { path: '/about', label: 'About' },
+  { path: '/contact', label: 'Contact' },
+  { path: '/resume', label: 'Resume' }
+];
+
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isNavCollapsed, setIsNavCollapsed] = useState(true);
-  const location = useLocation();
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    // React skips re-rendering when the value is unchanged, so this only renders when crossing the threshold
+    const onScroll = () => setScrolled(window.scrollY > 4);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const navLinks = [
-    { path: '/', label: 'Home' },
-    
-    { path: '/experience', label: 'Experience' },
-    { path: '/education', label: 'Education' },
-    { path: '/projects', label: 'Projects' },
-    { path: '/about', label: 'About' },
-    { path: '/contact', label: 'Contact' },
-    { path: '/resume', label: 'Resume' }
-  ];
-
-  const isActive = (path) => location.pathname === path;
-
   return (
-    <nav className={`navbar navbar-expand-lg fixed-top ${isScrolled ? 'navbar-scrolled' : ''}`}>
-      <div className="container">
-        <Link className="navbar-brand" to="/">
-          <span className="brand-text">Muhammad Mudassir</span>
-        </Link>
-
+    <header className={`nav${scrolled ? ' scrolled' : ''}`}>
+      <div className="nav-in">
+        <Link className="nav-brand" to="/" onClick={() => setOpen(false)}>{profile.name}</Link>
         <button
-          className="navbar-toggler"
+          className="nav-toggle"
           type="button"
-          onClick={() => setIsNavCollapsed(!isNavCollapsed)}
-          aria-controls="navbarNav"
-          aria-expanded={!isNavCollapsed}
-          aria-label="Toggle navigation"
+          onClick={() => setOpen(!open)}
+          aria-controls="nav-links"
+          aria-expanded={open}
+          aria-label={open ? 'Close menu' : 'Open menu'}
         >
-          <span className="navbar-toggler-icon"></span>
+          <Icon name={open ? 'xmark' : 'bars'} />
         </button>
-
-        <div className={`collapse navbar-collapse ${!isNavCollapsed ? 'show' : ''}`} id="navbarNav">
-          <ul className="navbar-nav ms-auto">
-            {navLinks.map((link) => (
-              <li className="nav-item" key={link.path}>
-                <Link
-                  className={`nav-link ${isActive(link.path) ? 'active' : ''}`}
-                  to={link.path}
-                  onClick={() => setIsNavCollapsed(true)}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <nav id="nav-links" className={`nav-links${open ? ' open' : ''}`} aria-label="Main">
+          {navLinks.map((link) => (
+            <NavLink key={link.path} to={link.path} end onClick={() => setOpen(false)}>
+              {link.label}
+            </NavLink>
+          ))}
+        </nav>
       </div>
-    </nav>
+    </header>
   );
 };
 
 export default Navbar;
-

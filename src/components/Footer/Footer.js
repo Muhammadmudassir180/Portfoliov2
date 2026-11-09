@@ -1,76 +1,47 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Icon from '../Icon/Icon';
+import { profile } from '../../portfolio';
 import './Footer.css';
 
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
+const socialLinks = [
+  { name: 'GitHub', url: profile.github.url, icon: 'github' },
+  { name: 'LinkedIn', url: profile.linkedin.url, icon: 'linkedin-in' },
+  { name: 'Email', url: `mailto:${profile.email}`, icon: 'envelope' }
+];
 
-  const socialLinks = [
-    { name: 'GitHub', url: '"https://github.com/Muhammadmudassir180', icon: 'fab fa-github' },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/muhammad-mudassir-/', icon: 'fab fa-linkedin' },
-    // { name: 'Twitter', url: 'https://twitter.com', icon: 'fab fa-twitter' },
-    { name: 'Email', url: 'mailto:muhammadmudassir981@gmail.com', icon: 'fas fa-envelope' }
-  ];
-
-  return (
-    <footer className="footer">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-4 col-md-6 mb-4">
-            <h5 className="footer-title">Portfolio</h5>
-            <p className="footer-description">
-              A passionate developer creating innovative solutions and building amazing experiences.
-            </p>
-          </div>
-          
-          <div className="col-lg-4 col-md-6 mb-4">
-            <h5 className="footer-title">Quick Links</h5>
-            <ul className="footer-links">
-              <li><a href="/about">About</a></li>
-              <li><a href="/experience">Experience</a></li>
-              <li><a href="/projects">Projects</a></li>
-              <li><a href="/contact">Contact</a></li>
-            </ul>
-          </div>
-          
-          <div className="col-lg-4 col-md-6 mb-4">
-            <h5 className="footer-title">Connect</h5>
-            <div className="social-links">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-link"
-                  title={social.name}
-                >
-                  <i className={social.icon}></i>
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-        
-        <hr className="footer-divider" />
-        
-        <div className="footer-bottom">
-          <div className="row align-items-center">
-            <div className="col-md-6">
-              <p className="copyright">
-                © {currentYear} Your Name. All rights reserved.
-              </p>
-            </div>
-            <div className="col-md-6 text-md-end">
-              <p className="made-with">
-                Made with <i className="fas fa-heart text-danger"></i> using React
-              </p>
-            </div>
-          </div>
+const Footer = () => (
+  <footer className="footer">
+    <div className="footer-in glass">
+      <div>
+        <h3>{profile.name}</h3>
+        <p>{profile.tagline}</p>
+      </div>
+      <div>
+        <h3>Quick links</h3>
+        <ul>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/experience">Experience</Link></li>
+          <li><Link to="/projects">Projects</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Connect</h3>
+        <div className="socials">
+          {socialLinks.map((s) => (
+            <a key={s.name} className="icon-btn" href={s.url} target="_blank" rel="noopener noreferrer" aria-label={s.name}>
+              <Icon name={s.icon} />
+            </a>
+          ))}
         </div>
       </div>
-    </footer>
-  );
-};
+      <div className="footer-bottom">
+        <span>© {new Date().getFullYear()} {profile.name}. All rights reserved.</span>
+        <span>Built with React</span>
+      </div>
+    </div>
+  </footer>
+);
 
 export default Footer;
-
